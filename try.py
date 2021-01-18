@@ -13,7 +13,7 @@ import json
 
 from transformers import AutoTokenizer
 
-tokenizer = AutoTokenizer.from_pretrained("pranavpsv/gpt2-story-gen")
+tokenizer = AutoTokenizer.from_pretrained("gpt2-large")
 
 train_path = './test.txt'
 test_path = './test.txt'
@@ -41,7 +41,7 @@ def load_dataset(train_path,test_path,tokenizer):
 train_dataset,test_dataset,data_collator = load_dataset(train_path,test_path,tokenizer)
 from transformers import Trainer, TrainingArguments,AutoModelWithLMHead
 
-model = AutoModelWithLMHead.from_pretrained("pranavpsv/gpt2-story-gen")
+model = AutoModelWithLMHead.from_pretrained("gpt2-large")
 
 
 training_args = TrainingArguments(
