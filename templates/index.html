@@ -1,0 +1,83 @@
+<HTML>
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>gpt2-food-reviews-maker<</title>
+    </head>
+    <body>
+        <div class = "container">
+            <div class="jumbotron mt-3">
+
+                <h1>gpt2-food-reviews-maker</h1>
+                <h3>generate food reviews based on review title </h3>
+                <A>GitHub repository : </A> <A href="https://github.com/ha-mulan/gpt2-food-reviews"> gpt2-food-reviews repo</A>
+                <br>
+                <A>Open API : </A> <A href="https://ainize.ai/ha-mulan/gpt2-food-reviews"> on Ainize </A>
+
+                <hr class="solid">
+
+                <h2>How to use</h2>
+                <div id="usage">
+                    <p>1. input review title</p>
+                    <p>2. Press the Run button and wait for about 3 seconds to get the result.</p>
+                </div>
+
+
+                <hr class="solid">
+                <h2>Example</h2>
+                <div id="usage">
+                  <h5>if review title is 'Super delicous'  you can checkout the result like this</h5>
+                </div>
+                <hr class="solid">
+                <p>
+                Delicious cake: These are good, tasty biscuits that are not overly sweet and are just right with a few crumbs of butter. We enjoyed all the flavors and have yet to find one that we really liked. If you like chocolate covered hazelnut and nutella, these are it.
+                <br/><br/>
+Great: I have eaten these for many years. They are great! Wonderful taste, great in recipes. The service is incredibly fast and they arrive quickly, very well packaged. Would order again!
+<br/><br/>
+Awesome!: I like this product and it is a little expensive for 5 biscuits a piece, but still a great deal!
+<br/><br/>
+
+Not Very Good: If you're like me and like cookies, you might like these, but I love muesli and this one taste about the same. It's not terribly good either, but I can't say it's bad.
+<br/><br/>
+
+Delicious!: These are a very good product with lots of good chocolate flavor and great crunch! I would definitely recommend them. I had purchased these while vacationing and loved them!
+<br/><br/>
+
+Yum: I bought these for the holiday season and they arrived fresh and in perfect condition. They are not like traditional cookies covered in chocolate and they are actually very good tasting and not greasy at all. I will definitely order them again.
+  <p/>
+
+                <hr class="solid">
+                <h2>Make your own reviews </h2>
+                <p>Please enter review title below</p>
+                <input id='review'>
+                <button onclick='printName()'>RUN</button>
+                <p></p>
+                <script type="text/javascript">
+                 function printName()  {
+                   const review = document.getElementById('review').value;
+
+                   fetch('/api/?review='+review).then(function(response){
+                     response.text().then(function(text){
+                       document.getElementById("result").innerText = text;
+                     })
+                   })
+                 }
+               </script>
+                  <hr class="solid">
+                <h2>your generated recipe</h2>
+                  <hr class="solid">
+                <div id='result'></div>
+
+    </div>
+            </div>
+        </div>
+    </body>
+</HTML>
+
