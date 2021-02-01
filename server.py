@@ -50,9 +50,9 @@ def generate():
     try:
         args = []
 
-        review=request.args.get('review')
+        text=request.args.get('text')
 
-        args.append(review)
+        args.append(text)
 
     except Exception:
         print("Empty Text")
