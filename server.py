@@ -5,7 +5,8 @@ from flask import Flask, render_template, request, Response, send_file, jsonify
 from queue import Queue, Empty
 import time
 import threading
-import text_preprocess
+from text_preprocess import normalize
+
 # Server & Handling Setting
 app = Flask(__name__)
 
