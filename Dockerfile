@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-runtime
+FROM python:3.7
 
 RUN apt-get update
 
@@ -13,6 +13,9 @@ RUN pip install contractions
 RUN pip install inflect
 RUN pip install nltk
 
+RUN pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
+RUN pip install bs4
 WORKDIR /app
 COPY . .
 
